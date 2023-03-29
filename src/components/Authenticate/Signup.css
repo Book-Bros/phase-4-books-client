@@ -1,0 +1,89 @@
+/* Add the following CSS rules to Signup.css file */
+.signup-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: auto;
+  max-width: 500px;
+  width: calc(100% - 40px); /* improved responsive design for smaller screens */
+}
+
+.txt_field {
+  display: flex; /* display elements in a row */
+  flex-direction: column; /* stack label and input field vertically */
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 14px; /* slightly smaller font size for labels */
+  font-weight: 500; /* bold font weight for labels */
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc; /* add a light grey border to input fields */
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button {
+  background-color: #008CBA;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* add a smooth transition effect */
+}
+
+button:hover {
+  background-color: #005F6B;
+}
+
+.buttons {
+  display: flex; /* display buttons in a row */
+  justify-content: space-between; /* distribute space evenly between buttons */
+  margin-top: 20px;
+}
+
+/* Add the following CSS rules to Login.css file */
+.login-card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: auto;
+  max-width: 500px;
+  width: calc(100% - 40px); /* improved responsive design for smaller screens */
+}
+
+/* The rest of the .txt_field, input and button styles are reused from Signup.css */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    gap: 30px; /* adjust the distance between buttons */
+  }
+
+  button {
+    background-color: #2e8b57; /* set background color */
+    color: white; /* set text color */
+    padding: 10px 20px; /* adjust padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #3cb371; /* change background color on hover */
+  }

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Signup.css"
 
 export default function Signup({setShowLogin}){
 
@@ -8,7 +9,7 @@ export default function Signup({setShowLogin}){
     }
 
     return(
-        <div>
+        <div className="signup-card">
             <h1>Signup</h1>
             <div className="txt_field">
                 <label htmlFor="username">Username: </label>
@@ -26,8 +27,11 @@ export default function Signup({setShowLogin}){
                 <label htmlFor="password">Confirm-Password: </label>
                 <input type="email" name="" id="" />
             </div>
-            <button onClick={OpenLogin}>Signup</button>
-            <button onClick={OpenLogin}>go-to-Login</button>
+            <div className="buttons">
+                <button onClick={OpenLogin}>Signup</button>
+                <button onClick={OpenLogin}>go-to-Login</button>
+            </div>
+
         </div>
     )
 }

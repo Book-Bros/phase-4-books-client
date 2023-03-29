@@ -17,7 +17,7 @@ function App() {
   }else{
     return(
       <div className="App">
-      <h2>Login-Page</h2>
+      <h2>Authentication-Page</h2>
       {showLogin ? (
       <Login setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
       ) : (
