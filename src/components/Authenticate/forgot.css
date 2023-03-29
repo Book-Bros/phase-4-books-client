@@ -1,0 +1,48 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .signup-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Blur the background */
+  .signup-card:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+  }
+
+  #close{
+    background-color: rgba(245, 65, 65, 0.909);
+    color: rgb(255, 255, 255);
+  }
+  #close:hover{
+    background-color: rgb(255, 0, 0);
+    color: black;
+  }
