@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function Signup(){
+export default function Signup({setShowLogin}){
 
     function OpenLogin() {
+        setShowLogin(true)
         console.log("going to Login")
     }
 

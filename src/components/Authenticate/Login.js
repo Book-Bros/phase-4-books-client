@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function Login({setLoggedIn}){
+export default function Login({setLoggedIn, setShowLogin}){
 
 const OpenSignup = () => {
+    setShowLogin(false)
     console.log("going to signup")
 }
+
 
 const GoHome = () => {
     console.log("going to home")

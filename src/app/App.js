@@ -6,6 +6,8 @@ import './App.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+
   if (loggedIn === true) {
     return (
       <div className="App">
@@ -15,9 +17,12 @@ function App() {
   }else{
     return(
       <div className="App">
-      <h2>Login-app</h2>
-      <Login setLoggedIn={setLoggedIn} />
-      <Signup />
+      <h2>Login-Page</h2>
+      {showLogin ? (
+      <Login setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
+      ) : (
+      <Signup setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
+      )}
     </div>
     )
   }
