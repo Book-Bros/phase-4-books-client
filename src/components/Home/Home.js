@@ -1,10 +1,11 @@
 import React from "react";
 
 
-export default function Home() {
+export default function Home({setLoggedIn}) {
 
 const Logout = () => {
         console.log("Logged out")
+        setLoggedIn(false)
 }
 
     return (

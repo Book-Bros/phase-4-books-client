@@ -6,17 +6,17 @@ import './App.css';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  if (loggedIn==true) {
+  if (loggedIn === true) {
     return (
       <div className="App">
-        <Home />
+        <Home setLoggedIn={setLoggedIn}/>
       </div>
     );
   }else{
     return(
       <div className="App">
       <h2>Login-app</h2>
-      <Login />
+      <Login setLoggedIn={setLoggedIn} />
       <Signup />
     </div>
     )

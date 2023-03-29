@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Login(){
+export default function Login({setLoggedIn}){
 
 const OpenSignup = () => {
     console.log("going to signup")
@@ -8,6 +8,7 @@ const OpenSignup = () => {
 
 const GoHome = () => {
     console.log("going to home")
+    setLoggedIn(true)
 }
 
     return(
