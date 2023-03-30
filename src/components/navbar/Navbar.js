@@ -12,8 +12,13 @@ export default function Navbar() {
           </Link>
         </li>
         <li className="nav-item">
+          <Link to="/books" className="nav-link">
+            Books
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to="/addbook" className="nav-link">
-            Add Book
+            Add-Book
           </Link>
         </li>
         <li className="nav-item">
