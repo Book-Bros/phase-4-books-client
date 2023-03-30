@@ -43,7 +43,7 @@ export default function Login({ setLoggedIn, setShowLogin }) {
         <input
           type={showPassword ? "text" : "password"}
           placeholder="Password"
-          id=""
+          id="password"
         />
         <span className="show-password" onClick={toggleShowPassword}>
           <img style={{ width: "40px" }} src={Eye} alt="Show Password" />
@@ -51,13 +51,10 @@ export default function Login({ setLoggedIn, setShowLogin }) {
       </div>
       <div className="buttons">
         <button onClick={GoHome}>Login</button>
-        <button onClick={handleForgotPassword}>Forgot Password</button>
+        <button id="close" onClick={handleForgotPassword}>Forgot Password</button>
         <button onClick={OpenSignup}>Create-Account</button>
       </div>
-      <Modal
-        isOpen={showForgotPassword} // show the modal if showForgotPassword is true
-        onRequestClose={handleForgotPasswordClose} // hide the modal if the user clicks outside of it
-      >
+      <Modal isOpen={showForgotPassword} onRequestClose={handleForgotPasswordClose} >
         <ForgotPassword onClose={handleForgotPasswordClose} />
       </Modal>
     </div>

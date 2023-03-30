@@ -1,7 +1,9 @@
+
 import React from "react";
+import Navbar from "../navbar/Navbar";
 
 
-export default function Home({setLoggedIn}) {
+export default function Profile({setLoggedIn}) {
 
 const Logout = () => {
         console.log("Logged out")
@@ -10,7 +12,8 @@ const Logout = () => {
 
     return (
         <div>
-            <h1>Home</h1>
+            <Navbar />
+            <h1>Profile</h1>
             <button onClick={Logout}>logout</button>
         </div>
     )
