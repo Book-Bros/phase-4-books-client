@@ -7,29 +7,17 @@ Modal.setAppElement("#root"); // this is needed for accessibility
 
 export default function Login({ setLoggedIn, setShowLogin }) {
   const [showPassword, setShowPassword] = useState(false);
-  const [showForgotPassword, setShowForgotPassword] = useState(false); // new state variable
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
-  const toggleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+const toggleShowPassword = () => {setShowPassword(!showPassword);};
+const handleForgotPassword = () => {setShowForgotPassword(true);};  // show forgot-password popup
+const handleForgotPasswordClose = () => {setShowForgotPassword(false);}; // hide forgot-password popup
+const OpenSignup = () => {setShowLogin(false);};
 
-  const OpenSignup = () => {
-    setShowLogin(false);
-    console.log("going to signup");
-  };
-
-  const GoHome = () => {
-    console.log("going to home");
+  const handleLogin = () => {
     setLoggedIn(true);
   };
 
-  const handleForgotPassword = () => {
-    setShowForgotPassword(true); // show the forgot password modal
-  };
-
-  const handleForgotPasswordClose = () => {
-    setShowForgotPassword(false); // hide the forgot password modal
-  };
 
   return (
     <div className="signup-card">
@@ -50,7 +38,7 @@ export default function Login({ setLoggedIn, setShowLogin }) {
         </span>
       </div>
       <div className="buttons">
-        <button onClick={GoHome}>Login</button>
+        <button onClick={handleLogin}>Login</button>
         <button id="close" onClick={handleForgotPassword}>Forgot Password</button>
         <button onClick={OpenSignup}>Create-Account</button>
       </div>

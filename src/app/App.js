@@ -5,7 +5,7 @@ import Main from '../components/Main/Main';
 import './App.css';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
 
   if (loggedIn === true) {
@@ -19,9 +19,9 @@ function App() {
       <div className="App">
       <h2>Authentication-Page</h2>
       {showLogin ? (
-      <Login setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
+      <Login path="/login" setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
       ) : (
-      <Signup setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
+      <Signup path="/signup" setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
       )}
     </div>
     )
