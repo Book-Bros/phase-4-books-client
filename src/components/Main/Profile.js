@@ -5,10 +5,21 @@ import Navbar from "../navbar/Navbar";
 
 export default function Profile({setLoggedIn}) {
 
-const Logout = () => {
-        console.log("Logged out")
-        setLoggedIn(false)
-}
+const Logout = async () => {
+    const response = await fetch('http://localhost:3000/users/logout', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: 'include'
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      alert(`${data.message}`);
+    }
+    setLoggedIn(false);
+  }
 
     return (
         <div>

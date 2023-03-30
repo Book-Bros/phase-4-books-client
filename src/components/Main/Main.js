@@ -11,14 +11,13 @@ export default function Main({setLoggedIn}) {
 
     return (
         <div>
-
             <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Homme />} />
-                <Route path="/addbook" element={<AddBook />} />
-                <Route path="/books" element={<Books />} />
-                <Route path="/profile" element={<Profile setLoggedIn={setLoggedIn}/>} />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Homme />} />
+                    <Route path="/addbook" element={<AddBook />} />
+                    <Route path="/books" element={<Books />} />
+                    <Route path="/profile" element={<Profile setLoggedIn={setLoggedIn}/>} />
+                </Routes>
             </BrowserRouter>
         </div>
     )
