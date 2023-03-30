@@ -43,7 +43,7 @@ export default function Login({ setLoggedIn, setShowLogin }) {
         <input
           type={showPassword ? "text" : "password"}
           placeholder="Password"
-          id=""
+          id="password"
         />
         <span className="show-password" onClick={toggleShowPassword}>
           <img style={{ width: "40px" }} src={Eye} alt="Show Password" />

@@ -2,12 +2,8 @@ import React from "react";
 import Navbar from "../navbar/Navbar";
 
 
-export default function Home({setLoggedIn}) {
+export default function Home() {
 
-const Logout = () => {
-        console.log("Logged out")
-        setLoggedIn(false)
-}
 
     return (
         <div>

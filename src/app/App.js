@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Login from '../components/Authenticate/Login';
 import Signup from '../components/Authenticate/Signup';
-import Home from '../components/Main/Main';
+import Main from '../components/Main/Main';
 import './App.css';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   if (loggedIn === true) {
     return (
       <div className="App">
-        <Home setLoggedIn={setLoggedIn}/>
+        <Main setLoggedIn={setLoggedIn}/>
       </div>
     );
   }else{

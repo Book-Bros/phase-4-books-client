@@ -1,22 +1,21 @@
-import React from "react";
-import Navbar from "../navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import Homme from "./Home";
+import AddBook from "./AddBook";
+import Profile from "./Profile";
 
 
-export default function Home({setLoggedIn}) {
+export default function Main({setLoggedIn}) {
 
-const Logout = () => {
-        console.log("Logged out")
-        setLoggedIn(false)
-}
 
     return (
         <div>
-            <Navbar />
+
             <BrowserRouter>
             <Routes>
-                <Route path/>
-
+                <Route path="/" element={<Homme />} />
+                <Route path="/addbook" element={<AddBook />} />
+                <Route path="/profile" element={<Profile setLoggedIn={setLoggedIn}/>} />
             </Routes>
             </BrowserRouter>
         </div>

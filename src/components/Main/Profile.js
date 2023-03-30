@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import React from "react";
 import Navbar from "../navbar/Navbar";
 
 
-export default function Home({setLoggedIn}) {
+export default function Profile({setLoggedIn}) {
 
 const Logout = () => {
         console.log("Logged out")
