@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import Eye from "../../images/eye.png";
+// import Eye from "../../images/eye.png";
 import { useNavigate } from "react-router-dom";
 
-export default function Signup({ setShowLogin }) {
-  const [showPassword, setShowPassword] = useState(false);
+export default function Signup() {
+  // const [showPassword, setShowPassword] = useState(false);
   const [userSignUp, setUserSignUp] = useState({
     username: "",
     password: "",
@@ -25,8 +25,27 @@ export default function Signup({ setShowLogin }) {
         },
         body: JSON.stringify(userSignUp),
       })
-      .then(() => takeLogIn('/'))
+      .then(() => { 
+
+        takeLogIn('/')
+          setUserSignUp({
+            username: "",
+            password: "",
+            email: "",
+            profile_image: ""
+          })
+          setConfirmPassword("")
+    })
+
     }else{
+
+      setUserSignUp({
+        username: "",
+        password: "",
+        email: "",
+        profile_image: ""
+      })
+      setConfirmPassword("")
       setError("Please enter matching passwords")
     }
 

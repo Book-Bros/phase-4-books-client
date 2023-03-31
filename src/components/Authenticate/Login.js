@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import Eye from "../../images/eye.png";
-import Modal from "react-modal";
-import ForgotPassword from "./ForgotPassword";
+// import Modal from "react-modal";
+// import ForgotPassword from "./ForgotPassword";
 
 
 
@@ -30,9 +30,11 @@ export default function Login({ setLoggedIn, setShowLogin }) {
     .then (response => {
       if (response.ok) {
         takeHome('/home');
+        setUserLogin({username: "", password: ""})
       }
       else {
         setError('Invalid username or password');
+        setUserLogin({username: "", password: ""})
       }
     })
   }
