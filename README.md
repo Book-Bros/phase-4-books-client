@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Books-Review
+-----
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This is the API backend for the books-review project .The Back-end can be found at [Back-End](https://github.com/Book-Bros/phase-4-books-client)
+    <br/>
+![love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
-## Available Scripts
+## Technologies-used
+   ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)   ![render](https://img.shields.io/badge/Render-430091?style=for-the-badge&logo=render&logoColor=white)     ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)   ![](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+   ![Ruby](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)    ![Sqlite](https://img.shields.io/badge/SQLite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+   ![mark-down](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+   ![stack](https://aleen42.github.io/badges/src/stackoverflow.svg)
+## Description
+-  The actions that the user can make are:
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screen-shots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Prerequisites
+- To start this project one must have the following:
+    1. **Sqlite3**
+    2. **Text-editor** (**VSCode** is :sunglasses:)
+    3. **ruby** >=2.5
+    4. **Rails**
+    4. **Patience**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
+1. Clone this repository
+    ```bash
+        git clone https://github.com/Book-Bros/phase-4-books-client.git
+    ```
 
-### `npm run build`
+2. Go into the project directory
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+        cd phase-4-books-api
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the necessary dependencies by bundling
+    ```bash
+        npm install
+        npm install react-router-dom
+        npm install react-modal
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. set-up the database
+    ```bash
+        rails db:migrate
+        rails db:seed
+    ```
+5. Start up the server
+    ```bash
+        rails s
+    ```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contributers
+ ![](http://ForTheBadge.com/images/badges/built-by-developers.svg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. [Stephen-Nene](https://github.com/Stephen-nene)
+2. [Sammy-CK](https://github.com/Sammy-CK)
+3. [Samueelx](https://github.com/Samueelx)
+4. [ShuaibShaban](https://github.com/ShuaibShaban)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## license
+- [MIT License](./LICENSE.md)
+### **Copyright**
+   - Book-Bros (c) 2023
