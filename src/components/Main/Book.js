@@ -10,8 +10,12 @@ function Book() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://127.0.0.1:3001/books/${id}`)
-        .then(res => res.json()).then((data) => setBook(data))
+        fetch(`https://booksapi-73rd.onrender.com/books/${id}`)
+        .then(res => res.json()).then((data) => {
+            console.log(id)
+            console.log(data)
+            setBook(data)
+        })
     }, [id])
 
 
