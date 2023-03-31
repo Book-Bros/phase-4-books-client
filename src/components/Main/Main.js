@@ -3,6 +3,7 @@ import React from "react";
 import Homme from "./Home";
 import AddBook from "./AddBook";
 import Books from "./Books";
+import Book from "./Book";
 import Profile from "./Profile";
 
 
@@ -18,6 +19,7 @@ export default function Main({setLoggedIn}) {
                 <Route path="/addbook" element={<AddBook />} />
                 <Route path="/books" element={<Books />} />
                 <Route path="/profile" element={<Profile setLoggedIn={setLoggedIn}/>} />
+                <Route path="/books/:id" element={<Book />}/>
             </Routes>
             </BrowserRouter>
         </div>
