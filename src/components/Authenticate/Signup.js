@@ -18,7 +18,7 @@ export default function Signup() {
   const handleSubmit =  (event) => {
     event.preventDefault();
     if(userSignUp.password === confirmPassword){
-      fetch("https://book-api-6jbp.onrender.com/users", {
+      fetch("https://booksapi-73rd.onrender.com/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
