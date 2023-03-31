@@ -4,9 +4,7 @@ import {Container, Card, Button} from 'react-bootstrap';
 
 
 export default function BookReview({book}) {
-  // const saved = () => {
-  //   alert("This button should save your review");
-  // };
+
 
   return (
     <Container>

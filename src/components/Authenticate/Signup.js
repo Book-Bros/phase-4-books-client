@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Signup.css";
-// import Eye from "../../images/eye.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
@@ -108,7 +107,7 @@ export default function Signup() {
         </div>
 
         <div className="buttons">
-          <button type="submit">Signup</button>
+        <button type="submit">Signup</button>
           <button onClick={() => takeLogIn('/')}>Go-To-Login</button>
         </div>
       </form>
