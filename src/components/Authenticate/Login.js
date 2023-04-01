@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 // import Modal from "react-modal";
-
+import './login.css'
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -17,9 +17,10 @@ export default function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('https://booksapi-73rd.onrender.com/users/login', {
+    fetch('http://localhost:3000/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: "include",
       body: JSON.stringify(user)
     })
       .then(response => {
@@ -42,8 +43,8 @@ export default function Login() {
 
 
   return (
-
-    <div className="signup-card">
+    <div className="login-page">
+    <div className="signup-card login-top">
       <h1>Login-page</h1>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -73,7 +74,7 @@ export default function Login() {
         </div>
       </form>
       </div>
-
+      </div>
   );
 }
 

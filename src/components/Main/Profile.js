@@ -2,24 +2,38 @@
 import {React, useState} from "react";
 import {useNavigate} from 'react-router-dom'
 import Navbar from "../navbar/Navbar";
+import './style/profile.css';
 
 
 export default function Profile() {
     let takeaway = useNavigate()
-    const [newPass, setNewPass] = useState("")
+    const [newPass, setNewPass] = useState({password: ""})
         // console.log("Logged out")
 
         function Logout(){
-            fetch('https://booksapi-73rd.onrender.com/users/logout')
-            .then(() => takeaway('/'))
+            fetch('http://localhost:3000/users/logout',{
+                method: 'GET',
+                headers: {'Content-Type': 'application/json'},
+                credentials: "include" 
+            })
+            .then(resp => resp.json())
+            .then((data) => {
+                console.log(data)
+                takeaway('/')
+            })
         }
 
         function handleupdate(e){
             e.preventDefault()
-            fetch('https://booksapi-73rd.onrender.com/users/update-password', {
+            fetch('http://localhost:3000/users/update-password', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(newPass)
+                credentials: "include",
+                body: JSON.stringify({password: newPass.password})
+            })
+            .then((resp) => {
+                setNewPass({password: ""})
+                alert("updated successfully")
             })
         }
 
@@ -27,16 +41,16 @@ export default function Profile() {
     return (
         <div>
             <Navbar />
-            <div>
+            <button onClick={() => Logout()}className="logout-btn">logout</button>
+            <h1>Profile</h1>
+            <div className="update">
             <h2>Update Password:</h2>
             <form onSubmit={(e) => handleupdate(e)}>
-                <input type="password" required value={newPass} onChange={(e) => setNewPass(e.target.value)} />
+                <input type="password" required minLength="6" value={newPass.password} onChange={(e) => setNewPass({password: e.target.value})} />
                 <input type="submit" value="Update"/>
             </form>
         </div>
         
-            <h1>Profile</h1>
-            <button onClick={() => Logout()}>logout</button>
 
 
         </div>

@@ -1,15 +1,20 @@
-import React, {useState } from "react";
+import {React, useState, useEffect} from "react";
 import Navbar from "../navbar/Navbar";
-import Modal from "react-modal";
+// import Modal from "react-modal";
 import { Container, Row, Col, } from 'react-bootstrap';
 import BookItem from "./BookItem";
-import BookReview from "./BookReview";
+// import BookReview from "./BookReview";
+import './style/books.css';
 
+// setBooks, books
+export default function Books() {
 
-export default function Books({setBooks, books}) {
-    const [showBookReview, setShowBookReview] = useState(false);
-    // const [books, setBooks] = useState([]);
-
+    const [books, setBooks] = useState([]);
+    useEffect(() => {
+      fetch('http://localhost:3000/books')
+        .then(response => response.json())
+        .then(data => setBooks(data))
+    }, []);
   
     /**Convert each book to a list item (component) */
     const element = books.map((book) => {
@@ -18,26 +23,15 @@ export default function Books({setBooks, books}) {
       </Col>
     })
   
-    const handleBookReviewOpen = () => {
-      setShowBookReview(true);
-    };
-  
-    const handleBookReviewClose = () => {
-      setShowBookReview(false);
-    };
-  
   
     return (
       <div>
         <Navbar />
         <h1>Books</h1>
-        <button onClick={handleBookReviewOpen}>Book-review</button>
-        <Modal isOpen={showBookReview} onRequestClose={handleBookReviewClose}>
-          <BookReview onClose={handleBookReviewClose} />
-        </Modal>
+        <h4 className="book-instr">CLick book to see details, reviews and add review</h4>
   
         <Container fluid>
-          <Row xs={1} md={2} lg={4} xl={6} className='g-8'>
+          <Row xs={1} md={2} lg={4} xl={6} className='g-8 allbooks'>
             {element}
           </Row>
         </Container>

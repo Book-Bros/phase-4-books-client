@@ -17,7 +17,7 @@ export default function Signup() {
   const handleSubmit =  (event) => {
     event.preventDefault();
     if(userSignUp.password === confirmPassword){
-      fetch("https://booksapi-73rd.onrender.com/users", {
+      fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +52,8 @@ export default function Signup() {
 
 
   return (
-    <div className="signup-card">
+    <div className="signup-page">
+    <div className="signup-card signup-top">
       <h1>Signup-page</h1>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
@@ -64,6 +65,7 @@ export default function Signup() {
             value={userSignUp.username}
             onChange={(e) => setUserSignUp({...userSignUp, username: e.target.value})}
             required
+            minLength="6"
           />
         </div>
         <div className="txt_field">
@@ -84,6 +86,7 @@ export default function Signup() {
             value={userSignUp.password}
             onChange={(e) => setUserSignUp({...userSignUp, password: e.target.value})}
             required
+            minLength="6"
           />
         </div>
         <div className="txt_field">
@@ -93,6 +96,7 @@ export default function Signup() {
             placeholder="Confirm-password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
+            minLength="6"
           />
         </div>
 
@@ -111,6 +115,7 @@ export default function Signup() {
           <button onClick={() => takeLogIn('/')}>Go-To-Login</button>
         </div>
       </form>
+    </div>
     </div>
   );
 }

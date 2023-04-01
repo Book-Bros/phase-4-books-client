@@ -3,23 +3,32 @@ import { Form, Button, Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 
-export default function CreateReviews({setBook}) {
+export default function CreateReviews({setReviews}) {
     const {id} = useParams()
-
     const [review, setReview] = useState({title: "", content: ""});
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        fetch(`https://booksapi-73rd.onrender.com/books/${id}/reviews`, {
+        fetch(`http://localhost:3000/books/${id}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(review)
+            credentials: "include",
+            body: JSON.stringify({...review, book_id: id})
         }).then(res => res.json())
         .then(data => {
             console.log(data)
-            fetch(`https://booksapi-73rd.onrender.com/books/${id}`).then(res => res.json()).then(data => setBook(data))
+            fetch(`http://localhost:3000/books/${id}`, {
+                method: "GET",
+                headers: {"Content-Type": "application/json"},
+                credentials: "include"
+                        })
+                        .then(res => res.json()).then(data => {
+                            setReviews(data.reviews)
+                            setReview({title: "", content: ""})
+                        })
+
         });
     }
 
@@ -33,7 +42,7 @@ export default function CreateReviews({setBook}) {
                 </Form.Group>
                 <Form.Group className='mb-3' controlId="content">
                     <Form.Label>Content:</Form.Label>
-                    <Form.Control as='textarea' name="content" value={review.content} onChange={(e) => setReview({...review, content: e.target.value})} style={{ height: '100px' }} required />
+                    <Form.Control as='textarea' minLength="20" name="content" value={review.content} onChange={(e) => setReview({...review, content: e.target.value})} style={{ height: '100px' }} required />
                 </Form.Group>
                 <div className='d-grid gap-2 col-6 mx-auto'>
                     <Button variant='secondary' type='submit' className='m-auto shadow' >Submit</Button>
