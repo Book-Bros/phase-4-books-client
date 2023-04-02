@@ -73,6 +73,9 @@ export default function Login({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
         <div className="buttons">
         <button type="submit">Login</button>
           <button onClick={() => takeHome('/signup')}>Create-Account</button>
+          <br />
+          <button onClick={() => takeHome('/updatepassword')}>Forgot Password</button>
+
         </div>
       </form>
       </div>

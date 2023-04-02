@@ -8,6 +8,7 @@ import AddBook from '../components/Main/AddBook';
 import Profile from '../components/Main/Profile'
 import ReviewUpdate from '../components/Main/ReviewUpdate';
 import UpdateBook from '../components/Main/UpdateBooks';
+import ForgotPassword from '../components/Authenticate/ForgotPassword';
 
 import Protect from '../components/Authenticate/Protect'
 
@@ -45,6 +46,9 @@ function App() {
         <Route path = "/" element = {<Login setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />}/>
         
         <Route path='/signup' element={ <Signup /> } />
+
+        <Route path='/updatepassword' element={ <ForgotPassword /> } />
+
 
         <Route path="/home" element={
           <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>
