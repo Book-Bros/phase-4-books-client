@@ -28,7 +28,7 @@ function App() {
         response.json().then(data => {
           setIsCurrentlyLoggedIn(true)
           setIdCurrentUser(data.id)
-          // console.log(isCurrentlyLoggedIn)
+          console.log( localStorage.getItem('token') )
         })
         
       }else{
@@ -44,11 +44,7 @@ function App() {
     <Routes>
         <Route path = "/" element = {<Login setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />}/>
         
-        <Route path='/signup' element={
-          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>
-            <Signup />
-          </Protect>
-        } />
+        <Route path='/signup' element={ <Signup /> } />
 
         <Route path="/home" element={
           <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>

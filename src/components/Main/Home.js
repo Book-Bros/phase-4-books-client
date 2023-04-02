@@ -9,9 +9,9 @@ export default function Home() {
     return (
         <div className="homediv">
             <Navbar />
-            <section class="wrapper">
-  <div class="top">Books</div>
-  <div class="bottom" aria-hidden="true">Books</div>
+            <section className="wrapper">
+  <div className="top">Books</div>
+  <div className="bottom" aria-hidden="true">Books</div>
 </section>
         </div>
     )

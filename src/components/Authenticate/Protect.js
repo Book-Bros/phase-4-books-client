@@ -7,9 +7,9 @@ const Protect = ({ isCurrentlyLoggedIn, children }) => {
             // console.log("hey good", isCurrentlyLoggedIn)
             return children;
           } else {
-            return children;
+            // return children;
             // console.log("hey bad", isCurrentlyLoggedIn)
-            // return <Navigate to="/"  />;
+            return <Navigate to="/"  />;
           }
     // }, 5000)
 
