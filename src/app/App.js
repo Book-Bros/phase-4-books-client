@@ -1,55 +1,102 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
 import Login from '../components/Authenticate/Login';
 import Signup from '../components/Authenticate/Signup';
-// import Main from '../components/Main/Main';
-// import Homme from "./Home";
 import Home from '../components/Main/Home';
-// import AddBook from "./AddBook";
-import AddBook from '../components/Main/AddBook';
-// import Books from "./Books";
 import Books from '../components/Main/Books'
-// import Book from "./Book";
 import Book from '../components/Main/Book'
-// import Profile from "./Profile";
+import AddBook from '../components/Main/AddBook';
 import Profile from '../components/Main/Profile'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ReviewUpdate from '../components/Main/ReviewUpdate';
+import UpdateBook from '../components/Main/UpdateBooks';
+import ForgotPassword from '../components/Authenticate/ForgotPassword';
+
+import Protect from '../components/Authenticate/Protect'
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
 function App() {
-    return(
-      <BrowserRouter>
-          <Routes>
-              <Route path = "/" element = {<Login />}/>
-              <Route path='/signup' element={<Signup />} />
-              <Route path="/home" element={<Home />} />
-                <Route path="/addbook" element={<AddBook />} />
-                <Route path="/books" element={<Books />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/books/:id" element={<Book />}/>
-          </Routes>
-      </BrowserRouter>
-    );
-  // const [loggedIn, setLoggedIn] = useState(false);
-  // const [showLogin, setShowLogin] = useState(true);
+  let [isCurrentlyLoggedIn, setIsCurrentlyLoggedIn] = useState(false)
+  let [idCurrentUser, setIdCurrentUser] = useState(null)
 
-  // if (loggedIn === true) {
-  //   return (
-  //     <div className="App">
-  //       <Main setLoggedIn={setLoggedIn}/>
-  //     </div>
-  //   );
-  // }else{
-  //   return(
-  //     <div className="App">
-  //     <h2>Authentication-Page</h2>
-  //     {showLogin ? (
-  //     <Login path="/login" setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
-  //     ) : (
-  //     <Signup path="/signup" setShowLogin={setShowLogin} setLoggedIn={setLoggedIn} />
-  //     )}
-  //   </div>
-  //   )
-  // }
+  useEffect(() => {
+    fetch('http://localhost:3000/users/checklogin', {
+      method: 'GET',
+      credentials: "include"
+    }).then((response) => {
+
+      if(response.ok){
+        response.json().then(data => {
+          setIsCurrentlyLoggedIn(true)
+          setIdCurrentUser(data.id)
+          console.log( localStorage.getItem('token') )
+        })
+        
+      }else{
+
+      } 
+    })
+  }, [])
+
+
+  return (
+    <BrowserRouter>
+    <div>
+    <Routes>
+        <Route path = "/" element = {<Login setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />}/>
+        
+        <Route path='/signup' element={ <Signup /> } />
+
+        <Route path='/updatepassword' element={ <ForgotPassword /> } />
+
+
+        <Route path="/home" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>
+            <Home />
+          </Protect>
+        } />
+
+        <Route path="/addbook" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <AddBook />
+          </Protect>
+        } />
+
+        <Route path="/books" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Books />
+          </Protect>
+        } />
+
+        <Route path="/profile" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Profile setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />
+          </Protect>
+        } />
+
+        <Route path="/books/:id" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Book idCurrentUser={idCurrentUser}/>
+          </Protect>
+        }/>
+
+        <Route path="/books/:bookid/reviews/:reviewid/update"  element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            < ReviewUpdate />
+          </Protect>
+        } />
+        
+        <Route path="/books/:id/update" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <UpdateBook />
+          </Protect>
+        } />
+
+
+    </Routes>
+    </div>
+</BrowserRouter>
+  );
 }
 
 export default App;

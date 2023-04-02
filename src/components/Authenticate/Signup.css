@@ -9,9 +9,25 @@
   box-shadow: 1px 10px 200px rgb(82, 83, 84);
   padding: 20px;
   margin: auto;
+  margin-top: 90px;
   max-width: 500px;
   width: calc(100% - 40px);
+  opacity: 0.85;
+  border-radius: 12px;
   }
+
+  .signup-page{
+    position: absolute;
+    top: 0px;
+    background-image: url(../../images/back1.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    min-height: 100%;
+  
+}
 
   .txt_field {
   display: flex;

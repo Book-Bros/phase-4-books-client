@@ -1,7 +1,7 @@
 # Books-Review
 -----
 
-- This is the API backend for the books-review project .The Back-end can be found at [Back-End](https://github.com/Book-Bros/phase-4-books-client)
+- This is the CLIENT frontend for the books-review project .The Back-end can be found at: [Front-End](https://github.com/Book-Bros/phase-4-books-api)
     <br/>
 ![love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
@@ -10,21 +10,34 @@
    ![Ruby](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)    ![Sqlite](https://img.shields.io/badge/SQLite3-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
    ![mark-down](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
    ![stack](https://aleen42.github.io/badges/src/stackoverflow.svg)
+   
 ## Description
 -  The actions that the user can make are:
-
+1. Users register / login to the platform
+2. A user creates a book and reviews that are well described.
+3. A user can then update books and their reviews.
+4. A user can then delete books and their reviews.
+5. In order to use the application, the user must be logged in.
 
 
 ## Screen-shots
+### Books page
+<img src="./src/images/ss1.png">
+    <br />
 
+### Single Book page
+<img src="./src/images/ss2.png">
 
 ## Prerequisites
 - To start this project one must have the following:
-    1. **Sqlite3**
-    2. **Text-editor** (**VSCode** is :sunglasses:)
-    3. **ruby** >=2.5
-    4. **Rails**
-    4. **Patience**
+    1. **Text-editor** (**VSCode** is :sunglasses:)
+    2. **React** 
+    3. **Patience**
+
+## Livelink
+Use netlify  to check out website and perform operations from there.The link in the About section
+
+
 
 ## Installation
 1. Clone this repository
@@ -41,18 +54,11 @@
 3. Install the necessary dependencies by bundling
     ```bash
         npm install
-        npm install react-router-dom
-        npm install react-modal
     ```
 
-4. set-up the database
+4. Start up the website
     ```bash
-        rails db:migrate
-        rails db:seed
-    ```
-5. Start up the server
-    ```bash
-        rails s
+         npm start
     ```
 
 
