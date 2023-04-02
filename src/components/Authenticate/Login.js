@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 // import Modal from "react-modal";
 import './login.css'
 
-export default function Login() {
+export default function Login({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
   const [user, setUser] = useState({
     username: "",
     password: ""
@@ -26,7 +26,9 @@ export default function Login() {
       .then(response => {
         if (response.ok) {
           response.json().then(data => {
-            console.log(data)
+            // console.log(data.info)
+            setIdCurrentUser(data.info)
+            setIsCurrentlyLoggedIn(true)
             takeHome('/home');
             setUser({ username: "", password: "" })
           })

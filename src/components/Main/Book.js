@@ -8,7 +8,7 @@ import Navbar from "../navbar/Navbar";
 
 
 
-function Book({setBooks}) {
+function Book({idCurrentUser}) {
     const [book, setBook] = useState({ })
     const [reviews, setReviews] = useState([])
     const { id } = useParams();
@@ -21,8 +21,8 @@ function Book({setBooks}) {
             credentials: "include"
         })
         .then(res => res.json()).then((data) => {
-            console.log(id)
-            console.log(data.reviews)
+            // console.log(id)
+            // console.log(data.reviews)
             setBook(data)
             setReviews(data.reviews)
             // taketobooks(`/books/${id}`)
@@ -49,7 +49,7 @@ function Book({setBooks}) {
 let reviewsLi;
 
     if(reviews.length > 0) {
-        reviewsLi = reviews.map((review) => {  return <BookReview review={review} key={review.id} nowBookID={id} setReviews={setReviews} reviews={reviews}/>  })
+        reviewsLi = reviews.map((review) => {  return <BookReview review={review} key={review.id} nowBookID={id} setReviews={setReviews} reviews={reviews} idCurrentUser={idCurrentUser} />  })
     }else{
         reviewsLi = <li>Be the first to add Review</li>
     }

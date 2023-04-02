@@ -5,7 +5,7 @@ import Navbar from "../navbar/Navbar";
 import './style/profile.css';
 
 
-export default function Profile() {
+export default function Profile({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
     let takeaway = useNavigate()
     const [newPass, setNewPass] = useState({password: ""})
         // console.log("Logged out")
@@ -18,7 +18,9 @@ export default function Profile() {
             })
             .then(resp => resp.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
+                setIsCurrentlyLoggedIn(false)
+                setIdCurrentUser(null)
                 takeaway('/')
             })
         }
