@@ -11,7 +11,7 @@ export default function Profile({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
         // console.log("Logged out")
 
         function Logout(){
-            fetch('http://localhost:3000/users/logout',{
+            fetch('https://bookie-vdkb.onrender.com/users/logout',{
                 method: 'GET',
                 headers: {'Content-Type': 'application/json'},
                 credentials: "include" 
@@ -27,7 +27,7 @@ export default function Profile({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
 
         function handleupdate(e){
             e.preventDefault()
-            fetch('http://localhost:3000/users/update-password', {
+            fetch('https://bookie-vdkb.onrender.com/users/update-password', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 credentials: "include",

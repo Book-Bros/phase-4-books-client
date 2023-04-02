@@ -18,7 +18,10 @@ export default function AddBook({setBooks, books}) {
     let [genres, setGenre] = useState([]);
   
     useEffect(() =>{
-      fetch('http://localhost:3000/genres')
+      fetch('https://bookie-vdkb.onrender.com/genres', {
+        method: 'GET',
+        credentials: "include"
+      })
         .then((resp) => resp.json())
         .then((data) => setGenre(data))
     },
@@ -33,7 +36,7 @@ export default function AddBook({setBooks, books}) {
   
     function handleSubmit(e) {
       e.preventDefault();
-      fetch("http://localhost:3000/books", {
+      fetch("https://bookie-vdkb.onrender.com/books", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

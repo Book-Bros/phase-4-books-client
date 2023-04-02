@@ -17,7 +17,7 @@ export default function Login({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3000/users/login', {
+    fetch('https://bookie-vdkb.onrender.com/users/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: "include",
