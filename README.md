@@ -1,7 +1,7 @@
 # Books-Review
 -----
 
-- This is the API backend for the books-review project .The Back-end can be found at [Back-End](https://github.com/Book-Bros/phase-4-books-client)
+- This is the CLIENT frontend for the books-review project .The Back-end can be found at: [Front-End](https://github.com/Book-Bros/phase-4-books-api)
     <br/>
 ![love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
@@ -38,9 +38,6 @@
 Use netlify  to check out website and perform operations from there.The link in the About section
 
 
-- Backend of this project was built using Ruby on Rails:
-
-           https://github.com/Book-Bros/phase-4-books-api
 
 ## Installation
 1. Clone this repository
