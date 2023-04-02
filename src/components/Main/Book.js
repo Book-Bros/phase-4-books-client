@@ -17,7 +17,7 @@ function Book({idCurrentUser}) {
     // let reviews;
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books/${id}`,{
+        fetch(`https://bookie-vdkb.onrender.com/books/${id}`,{
             method: 'GET',
             credentials: "include"
         })
@@ -34,7 +34,7 @@ function Book({idCurrentUser}) {
     }, [id])
 
     function deleteBook(){
-        fetch(`http://localhost:3000/books/${id}`, {
+        fetch(`https://bookie-vdkb.onrender.com/books/${id}`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'},
             credentials: "include"

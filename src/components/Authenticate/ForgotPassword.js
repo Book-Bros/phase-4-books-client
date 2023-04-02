@@ -15,7 +15,7 @@ function ForgotPassword(){
         
       const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/users/forgot-password', {
+        fetch('https://bookie-vdkb.onrender.com/users/forgot-password', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: "include",

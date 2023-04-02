@@ -11,7 +11,10 @@ export default function Books() {
 
     const [books, setBooks] = useState([]);
     useEffect(() => {
-      fetch('http://localhost:3000/books')
+      fetch('https://bookie-vdkb.onrender.com/books', {
+        method: 'GET',
+        credentials: "include"
+      })
         .then(response => response.json())
         .then(data => setBooks(data))
     }, []);

@@ -15,7 +15,7 @@ function UpdateBook(){
     }); 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books/${id}`,{
+        fetch(`https://bookie-vdkb.onrender.com/books/${id}`,{
             method: 'GET',
             credentials: "include"
         })
@@ -28,7 +28,7 @@ function UpdateBook(){
 
     function handleUpdateBook(e){
         e.preventDefault()
-        fetch(`http://localhost:3000/books/${id}`,{
+        fetch(`https://bookie-vdkb.onrender.com/books/${id}`,{
             method: 'PUT',
             headers: {"Content-Type": "application/json"},
             credentials: "include",

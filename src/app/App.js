@@ -20,7 +20,7 @@ function App() {
   let [idCurrentUser, setIdCurrentUser] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3000/users/checklogin', {
+    fetch('https://bookie-vdkb.onrender.com/users/checklogin', {
       method: 'GET',
       credentials: "include"
     }).then((response) => {

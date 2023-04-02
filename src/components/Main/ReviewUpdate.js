@@ -16,7 +16,7 @@ function ReviewUpdate(){
     })
 
     useEffect(() => {
-        fetch(`http://localhost:3000/books/${bookid}/reviews/${reviewid}`, {
+        fetch(`https://bookie-vdkb.onrender.com/books/${bookid}/reviews/${reviewid}`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
             credentials: "include"
@@ -26,7 +26,7 @@ function ReviewUpdate(){
 
     function updateCurrentReview(e){
         e.preventDefault()
-        fetch(`http://localhost:3000/books/${bookid}/reviews/${reviewid}`, {
+        fetch(`https://bookie-vdkb.onrender.com/books/${bookid}/reviews/${reviewid}`, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             credentials: "include",
