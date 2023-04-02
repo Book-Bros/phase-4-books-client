@@ -3,6 +3,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import BookReview from "./BookReview";
 import CreateReviews from "./CreateReviews";
+import Navbar from "../navbar/Navbar";
 
 
 
@@ -55,6 +56,8 @@ let reviewsLi;
     
 
     return (
+        <div>
+            <Navbar />
         <Container>
             <Row>
                 <Col md={6}>
@@ -76,6 +79,7 @@ let reviewsLi;
                 </Col>
             </Row>
         </Container>
+        </div>
     );
 
 }
