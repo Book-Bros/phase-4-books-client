@@ -6,6 +6,8 @@ import Books from '../components/Main/Books'
 import Book from '../components/Main/Book'
 import AddBook from '../components/Main/AddBook';
 import Profile from '../components/Main/Profile'
+import ReviewUpdate from '../components/Main/ReviewUpdate';
+import UpdateBook from '../components/Main/UpdateBooks';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
@@ -22,6 +24,8 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/books/:id" element={<Book />}/>
+        <Route path="/books/:bookid/reviews/:reviewid/update"  element={< ReviewUpdate />} />
+        <Route path="/books/:id/update" element={<UpdateBook />} />
     </Routes>
 </BrowserRouter>
   );

@@ -48,7 +48,7 @@ function Book({setBooks}) {
 let reviewsLi;
 
     if(reviews.length > 0) {
-        reviewsLi = reviews.map((review) => {  return <BookReview review={review} key={review.id}/>  })
+        reviewsLi = reviews.map((review) => {  return <BookReview review={review} key={review.id} nowBookID={id} setReviews={setReviews} reviews={reviews}/>  })
     }else{
         reviewsLi = <li>Be the first to add Review</li>
     }
@@ -72,6 +72,7 @@ let reviewsLi;
                     <CreateReviews setReviews = {setReviews}/>
 
                     <Button variant="warning" className='shadow m-3' onClick={deleteBook}>Delete Book</Button>
+                    <Button variant="warning" className='shadow m-3' onClick={() => taketobooks(`/books/${id}/update`) }>Update Book</Button>
                 </Col>
             </Row>
         </Container>
