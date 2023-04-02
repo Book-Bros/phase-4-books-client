@@ -17,12 +17,13 @@ export default function BookReview({review, nowBookID, setReviews, reviews, idCu
     })
     }
   return (
-    <li>
+    <li className="eachReview">
         <Card className='border-dark p-2 mb-2 shadow'>
-          <Card.Title>{review.title}</Card.Title>
-          <Card.Text>{review.content}</Card.Text>
-          <Button variant='secondary' hidden={idCurrentUser !== review.user_id} className='m-auto shadow' onClick={() => takeupdateReview(`/books/${nowBookID}/reviews/${review.id}/update`)}>Update</Button>
-          <Button variant='secondary' hidden={idCurrentUser !== review.user_id} className='m-auto shadow' onClick={deleteReview}>Delete</Button>
+          <Card.Title className="titleReviewCard"><em>{review.title}</em></Card.Title>
+          <Card.Text>{review.content}
+          <Button variant='secondary' hidden={idCurrentUser !== review.user_id} className='m-auto shadow reviews-btns' onClick={() => takeupdateReview(`/books/${nowBookID}/reviews/${review.id}/update`)}>Update</Button>
+          <Button variant='secondary' hidden={idCurrentUser !== review.user_id} className='m-auto shadow reviews-btns' onClick={deleteReview}>Delete</Button>  
+          </Card.Text>
         </Card>
     </li>
 

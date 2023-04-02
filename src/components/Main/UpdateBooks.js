@@ -41,7 +41,7 @@ function UpdateBook(){
 
     return(
 
-        <div>
+        <div className="homediv"> 
         <Navbar />
         <h1>Update-book</h1>
   

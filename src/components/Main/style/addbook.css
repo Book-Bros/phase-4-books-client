@@ -3,10 +3,10 @@
     box-sizing: border-box;
     width: 60%;
     text-align: center;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.8);
     padding: 30px 0px;
     border-radius: 12px;
-    height: 420px;
+    min-height: 420px;  
 }
 
 .labels{

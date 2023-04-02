@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import BookReview from "./BookReview";
 import CreateReviews from "./CreateReviews";
 import Navbar from "../navbar/Navbar";
+import './style/singlebook.css'
 
 
 
@@ -51,7 +52,7 @@ let reviewsLi;
     if(reviews.length > 0) {
         reviewsLi = reviews.map((review) => {  return <BookReview review={review} key={review.id} nowBookID={id} setReviews={setReviews} reviews={reviews} idCurrentUser={idCurrentUser} />  })
     }else{
-        reviewsLi = <li>Be the first to add Review</li>
+        reviewsLi = <li style={{textAlign: "center"}}>Be the first to add Review</li>
     }
     
 
@@ -60,22 +61,26 @@ let reviewsLi;
             <Navbar />
         <Container>
             <Row>
-                <Col md={6}>
+                <Col md={6} className="imageBook">
                     <img src={book.cover_image} width='300' alt={`Cover of ${book.title}.`} className='pt-2 pb-2 mr-auto ml-auto shadow' style={{ display: 'block' }} />
                 </Col>
                 <Col lg={true}>
+                    <div className="book-details">
                     <h2 className="header text-center pt-5">{book.title}</h2>
                     <h3 className="font-italic text-center">AUTHOR: {book.author}</h3>
-                    {/* <h3 className="font-italic text-center">{book.genres[0].name}</h3> */}
                     <p>{book.description}</p>
-                    <h2 className='header text-center bg-primary text-white'>Reviews</h2>
-                    <ul>
+                    <Button variant="warning" className='shadow m-3' style={{marginRight: "10px"}} onClick={() => taketobooks(`/books/${id}/update`) }>Update Book</Button>
+                    <Button variant="warning" className='shadow m-3' onClick={deleteBook}>Delete Book</Button>
+                    </div>
+                        <CreateReviews setReviews = {setReviews}/>
+
+
+                    <h2 className='header text-center bg-primary text-white review-title'>Reviews</h2>
+                    <ul className="bookreview">
                         {reviewsLi}
                     </ul>
-                    <CreateReviews setReviews = {setReviews}/>
 
-                    <Button variant="warning" className='shadow m-3' onClick={deleteBook}>Delete Book</Button>
-                    <Button variant="warning" className='shadow m-3' onClick={() => taketobooks(`/books/${id}/update`) }>Update Book</Button>
+
                 </Col>
             </Row>
         </Container>

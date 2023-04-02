@@ -1,16 +1,18 @@
 import React from "react";
 import Navbar from "../navbar/Navbar";
+import './style/home.css'
 
 
 export default function Home() {
 
 
     return (
-        <div>
+        <div className="homediv">
             <Navbar />
-            <h1>Home</h1>
-            <h2>Welcome to book-bros</h2>
-
+            <section class="wrapper">
+  <div class="top">Books</div>
+  <div class="bottom" aria-hidden="true">Books</div>
+</section>
         </div>
     )
 }

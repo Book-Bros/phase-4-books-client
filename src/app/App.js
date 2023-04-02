@@ -9,6 +9,8 @@ import Profile from '../components/Main/Profile'
 import ReviewUpdate from '../components/Main/ReviewUpdate';
 import UpdateBook from '../components/Main/UpdateBooks';
 
+import Protect from '../components/Authenticate/Protect'
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -26,7 +28,7 @@ function App() {
         response.json().then(data => {
           setIsCurrentlyLoggedIn(true)
           setIdCurrentUser(data.id)
-          // console.log(data)
+          // console.log(isCurrentlyLoggedIn)
         })
         
       }else{
@@ -38,17 +40,61 @@ function App() {
 
   return (
     <BrowserRouter>
+    <div>
     <Routes>
         <Route path = "/" element = {<Login setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />}/>
-        <Route path='/signup' element={<Signup />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/addbook" element={<AddBook />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/profile" element={<Profile setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />} />
-        <Route path="/books/:id" element={<Book idCurrentUser={idCurrentUser}/>}/>
-        <Route path="/books/:bookid/reviews/:reviewid/update"  element={< ReviewUpdate />} />
-        <Route path="/books/:id/update" element={<UpdateBook />} />
+        
+        <Route path='/signup' element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>
+            <Signup />
+          </Protect>
+        } />
+
+        <Route path="/home" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>
+            <Home />
+          </Protect>
+        } />
+
+        <Route path="/addbook" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <AddBook />
+          </Protect>
+        } />
+
+        <Route path="/books" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Books />
+          </Protect>
+        } />
+
+        <Route path="/profile" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Profile setIsCurrentlyLoggedIn={setIsCurrentlyLoggedIn} setIdCurrentUser={setIdCurrentUser} />
+          </Protect>
+        } />
+
+        <Route path="/books/:id" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <Book idCurrentUser={idCurrentUser}/>
+          </Protect>
+        }/>
+
+        <Route path="/books/:bookid/reviews/:reviewid/update"  element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            < ReviewUpdate />
+          </Protect>
+        } />
+        
+        <Route path="/books/:id/update" element={
+          <Protect  isCurrentlyLoggedIn={isCurrentlyLoggedIn}>        
+            <UpdateBook />
+          </Protect>
+        } />
+
+
     </Routes>
+    </div>
 </BrowserRouter>
   );
 }

@@ -54,7 +54,7 @@ export default function AddBook({setBooks, books}) {
     }
   
     return (
-      <div>
+      <div className="homediv">
         <Navbar />
         <h1>Add-book</h1>
   

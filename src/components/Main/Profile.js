@@ -38,10 +38,10 @@ export default function Profile({setIsCurrentlyLoggedIn, setIdCurrentUser}) {
                 alert("updated successfully")
             })
         }
-
+        
 
     return (
-        <div>
+        <div className="homediv">
             <Navbar />
             <button onClick={() => Logout()}className="logout-btn">logout</button>
             <h1>Profile</h1>

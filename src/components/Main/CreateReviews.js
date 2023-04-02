@@ -33,21 +33,22 @@ export default function CreateReviews({setReviews}) {
     }
 
     return (
-        <Container className='w-50 p-5'>
-            <h2 className='header text-center'>Create a New Review</h2>
-            <Form onSubmit={handleOnSubmit} className='mx-auto'>
-                <Form.Group className='mb-3' controlId="title">
-                    <Form.Label>Review Title:</Form.Label>
+        <Container className='w-50 p-5' >
+            <h2 className='header text-center' style={{textAlign: "center"}}>Create a New Review</h2>
+            <Form onSubmit={handleOnSubmit} className='mx-auto '>
+                <Form.Group className='mb-3' controlId="title" >
+                    <Form.Label style={{paddingRight: "20px"}}>Review Title:</Form.Label>
                     <Form.Control type="text" name="title" value={review.title} onChange={(e) => setReview({...review, title: e.target.value})} required />
                 </Form.Group>
                 <Form.Group className='mb-3' controlId="content">
-                    <Form.Label>Content:</Form.Label>
-                    <Form.Control as='textarea' minLength="20" name="content" value={review.content} onChange={(e) => setReview({...review, content: e.target.value})} style={{ height: '100px' }} required />
+                <Form.Label style={{float: "left"}}>Content:</Form.Label>
+                    <Form.Control as='textarea' minLength="20" name="content" value={review.content} onChange={(e) => setReview({...review, content: e.target.value})} style={{ height: '70px' }} required />
                 </Form.Group>
-                <div className='d-grid gap-2 col-6 mx-auto'>
-                    <Button variant='secondary' type='submit' className='m-auto shadow' >Submit</Button>
+                <div className='d-grid gap-2 col-6 mx-auto thesub'>
+                    <Button variant='secondary' type='submit' className='m-auto shadow thesub' >Submit</Button>
                 </div>
             </Form>
         </Container>
+        
     );
 }

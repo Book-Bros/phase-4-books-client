@@ -1,7 +1,7 @@
 import {React, useState, useEffect} from "react";
 import Navbar from "../navbar/Navbar";
 // import Modal from "react-modal";
-import { Container, Row, Col, } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import BookItem from "./BookItem";
 // import BookReview from "./BookReview";
 import './style/books.css';
@@ -25,16 +25,16 @@ export default function Books() {
   
   
     return (
-      <div>
+      <div className="homediv">
         <Navbar />
-        <h1>Books</h1>
+        <h1 style={{marginLeft: "19px"}}>Books</h1>
         <h4 className="book-instr">CLick book to see details, reviews and add review</h4>
   
-        <Container fluid>
+        <div>
           <Row xs={1} md={2} lg={4} xl={6} className='g-8 allbooks'>
             {element}
           </Row>
-        </Container>
+        </div>
       </div>
     );
   }
