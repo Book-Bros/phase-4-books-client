@@ -1,7 +1,7 @@
 # Books-Review
 -----
 
-- This is the CLIENT frontend for the books-review project .The Back-end can be found at: [Front-End](https://github.com/Book-Bros/phase-4-books-api)
+- This is the CLIENT frontend for the books-review project .The Back-end can be found at: [Back-End](https://github.com/Book-Bros/phase-4-books-api)
     <br/>
 ![love](http://ForTheBadge.com/images/badges/built-with-love.svg)
 
